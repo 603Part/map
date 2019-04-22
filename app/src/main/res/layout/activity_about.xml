@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="关于我"
+        android:gravity="center"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/logo"
+        />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="10dp"
+        android:text="软件名称：百度导航系统"
+        />
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="10dp"
+        android:text="制作学生：石嘉祥"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="10dp"
+        android:text="学院：信息科学与技术学院"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="10dp"
+        android:text="专业：计算机科学与技术"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="10dp"
+        android:text="指导老师：刘智斌"
+        />
+</LinearLayout>

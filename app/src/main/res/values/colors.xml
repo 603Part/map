@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="lightGray">#F2F2F2</color>
+
+    <color name="gray">#cccccc</color>
+
+    <color name="textColor">#3D3D3D</color>
+
+    <color name="secondTextColor">#a8a8a8</color>
+
+    <color name="red">#c30712</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="orange">#ff5100</color>
+
+    <color name="yellow">#ffbb01</color>
+
+    <color name="drakGreen">#0da08e</color>
+
+    <color name="green">#16cf60</color>
+
+    <color name="blue">#4670b4</color>
+
+    <color name="pink">#ffa3b4</color>
+
+    <color name="lightBlue">#00b4d4</color>
+
+    <color name="translucent">#86222222</color>
+
+    <color name="translucentWhite">#aeffffff</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="lightTranslucent">#22000000</color>
+
+    <color name="black">#000000</color>
+
+    <color name="lightBlack">#282828</color>
+
+    <color name="bg">#f7f7f7</color>
+
+    <color name="textColors">#999999</color>
+
+    <color name="trans_red">#ddf54142</color>
+
+    <color name="tv_light_gray">#747474</color>
+
+    <color name="tv_second_light_gray">#B7B7B7</color>
+
+    <color name="tv_dark_gray">#232323</color>
+
+    <color name="lightRed">#ED494A</color>
+
+    <color name="dDVTransparentGray">#99000000</color>
+    <color name="edit_gray">#fff2f2f2</color>
+    <color name="line">#E0E0E0</color>
+    <color name="text_gray">#CECECE</color>
+    <color name="text_black">#333333</color>
+</resources>
