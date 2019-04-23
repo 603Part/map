@@ -27,7 +27,7 @@ import com.baidu.navisdk.adapter.NaviModuleImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GuideActivity extends AppCompatActivity {
+public class GuideActivity extends BaseActivity {
 
     private final String TAG = GuideActivity.class.getName();
     private BNRoutePlanNode mBNRoutePlanNode = null;

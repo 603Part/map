@@ -183,14 +183,28 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btn_login"
+    android:id="@+id/btn_login"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:background="@drawable/shp_login"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:onClick="save"
+    android:text="保存更改"
+    android:textColor="@color/white"
+    android:textSize="13sp" />
+
+
+    <Button
+        android:id="@+id/btn_loginout"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:background="@drawable/shp_login"
         android:layout_margin="10dp"
         android:gravity="center"
         android:onClick="save"
-        android:text="保存更改"
+        android:text="退出"
         android:textColor="@color/white"
         android:textSize="13sp" />
+
 </LinearLayout>

@@ -2,10 +2,13 @@ package com.example.lbstest;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,7 +17,7 @@ import android.widget.Toast;
 import com.example.lbstest.db.DBManager;
 import com.example.lbstest.model.User;
 
-public class UpdateActivity extends AppCompatActivity {
+public class UpdateActivity extends BaseActivity {
 
     EditText account,nickname,phone,pwd;
     private RadioGroup gender,isLogin;
@@ -23,6 +26,7 @@ public class UpdateActivity extends AppCompatActivity {
     private String sex;
     private User user;
     private String status;
+    private Button logout;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -35,7 +39,7 @@ public class UpdateActivity extends AppCompatActivity {
         pwd = (EditText)findViewById(R.id.pwd);
         nickname = (EditText) findViewById(R.id.nickname);
         phone = (EditText) findViewById(R.id.phone);
-
+        logout = (Button) findViewById(R.id.btn_loginout);
         gender = (RadioGroup) findViewById(R.id.gender);
         isLogin = (RadioGroup) findViewById(R.id.isLogin);
 
@@ -98,6 +102,18 @@ public class UpdateActivity extends AppCompatActivity {
                         status = "1";
                         break;
                 }
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LocalBroadcastManager.getInstance(UpdateActivity.this).sendBroadcast(new Intent("logout"));
+                Intent intent = new Intent(UpdateActivity.this, LoginActivity.class);
+                intent.putExtra("status", "logout");
+                startActivity(intent);
+                setResult(RESULT_OK);
+                finish();
             }
         });
     }

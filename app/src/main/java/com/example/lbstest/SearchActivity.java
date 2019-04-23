@@ -16,7 +16,7 @@ import com.example.lbstest.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends AppCompatActivity implements ManagerAdapter.OnItemClickListener {
+public class SearchActivity extends BaseActivity implements ManagerAdapter.OnItemClickListener {
 
     private RecyclerView mRecyclerView;
     ManagerAdapter mAdapter;

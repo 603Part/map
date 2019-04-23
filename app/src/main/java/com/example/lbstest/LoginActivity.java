@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -29,7 +30,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        String status = getIntent().getStringExtra("status");
+        if (!TextUtils.isEmpty(status) && status.equals("logout")) {
+            Toast.makeText(this, "成功退出", Toast.LENGTH_SHORT).show();
+        }
         account = (AppCompatEditText) findViewById(R.id.ed_account);
         pass = (AppCompatEditText) findViewById(R.id.ed_pass);
 

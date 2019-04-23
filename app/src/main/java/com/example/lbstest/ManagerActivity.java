@@ -17,13 +17,13 @@ import com.example.lbstest.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManagerActivity extends AppCompatActivity implements ManagerAdapter.OnItemClickListener {
+public class ManagerActivity extends BaseActivity implements ManagerAdapter.OnItemClickListener {
 
     private RecyclerView mRecyclerView;
     ManagerAdapter mAdapter;
     private ImageView search;
     private EditText searchEd;
-    private TextView addUser;
+    private TextView addUser,logout;
 
     private List<User> list = new ArrayList<>();
     private List<User> allUser;
@@ -36,6 +36,7 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
         addUser = (TextView) findViewById(R.id.add_user);
         search = (ImageView)findViewById(R.id.search);
         searchEd = (EditText) findViewById(R.id.search_username);
+        logout = (TextView) findViewById(R.id.logout);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +63,16 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
             public void onClick(View view) {
                 Intent intent = new Intent(ManagerActivity.this, AddUserActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ManagerActivity.this, LoginActivity.class);
+                intent.putExtra("status", "logout");
+                startActivity(intent);
+                clearActivity();
             }
         });
     }

@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.example.lbstest.db.DBManager;
 import com.example.lbstest.model.User;
 
-public class AddUserActivity extends AppCompatActivity {
+public class AddUserActivity extends BaseActivity {
 
     EditText account,nickname,phone,pwd;
     private RadioGroup gender,isLogin;

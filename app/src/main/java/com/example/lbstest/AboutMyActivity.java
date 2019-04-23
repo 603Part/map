@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.baidu.mapapi.SDKInitializer;
 
-public class AboutMyActivity extends AppCompatActivity {
+public class AboutMyActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

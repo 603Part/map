@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.lbstest.db.DBManager;
 import com.example.lbstest.model.User;
 
-public class DeleteAndUpdateActivity extends AppCompatActivity {
+public class DeleteAndUpdateActivity extends BaseActivity {
 
     EditText account,nickname,phone;
     private RadioGroup gender,isLogin;

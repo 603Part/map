@@ -1,13 +1,17 @@
 package com.example.lbstest;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.LocalBroadcastManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -69,7 +73,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MainActivity extends Activity implements OnGetGeoCoderResultListener {
+public class MainActivity extends BaseActivity implements OnGetGeoCoderResultListener {
 
     public static final String ROUTE_PLAN_NODE = "routePlanNode";
     /**
@@ -216,6 +220,13 @@ public class MainActivity extends Activity implements OnGetGeoCoderResultListene
         initBaiduMap();
         //初始化传感器
         initSensor();
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                MainActivity.this.finish();
+            }
+        },new IntentFilter("logout"));
     }
 
     /**
@@ -536,6 +547,7 @@ public class MainActivity extends Activity implements OnGetGeoCoderResultListene
         }
         return true;
     }
+
 
     /**
      * 使用SDK前，先进行百度服务授权和引擎初始化
