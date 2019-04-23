@@ -202,12 +202,14 @@ public class MainActivity extends Activity implements OnGetGeoCoderResultListene
         }
     };
     SuspensionFab fabTop;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_main);
+        username = getIntent().getStringExtra("username");
         //界面初始化：控件初始化
         initView();
         //初始化百度地图相关
@@ -338,9 +340,11 @@ public class MainActivity extends Activity implements OnGetGeoCoderResultListene
                 if(tag.toString().equals("2")){
                     relativeLayout.setVisibility(View.VISIBLE);
                 }else if (tag.toString().equals("1")){
-                    startActivity(new Intent(MainActivity.this,AboutMyActivity.class));
+                    startActivity(new Intent(MainActivity.this, AboutMyActivity.class));
                 }else if (tag.toString().equals("3")){
-                    startActivity(new Intent(MainActivity.this,UpdateActivity.class));
+                    Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
+                    intent.putExtra("username", username);
+                    startActivity(intent);
                 }
             }
         });

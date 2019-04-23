@@ -22,6 +22,7 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
     private TextView addUser;
 
     private List<User> list = new ArrayList<>();
+    private List<User> allUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +30,24 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
         setContentView(R.layout.activity_manager);
 
         addUser = (TextView) findViewById(R.id.add_user);
-        List<User> allUser = DBManager.getAllUser();
-        for (User user1 : allUser) {
-            list.add(user1);
-        }
 
-        mAdapter = new ManagerAdapter(getApplicationContext(), list);
 
+
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        allUser = DBManager.getAllUser();
+
+        mAdapter = new ManagerAdapter(getApplicationContext(), allUser);
+        mAdapter.setOnItemClickListener(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.addItemDecoration(new SpacesItemDecoration(10));
         mRecyclerView.setAdapter(mAdapter);
-
-        mAdapter.setOnItemClickListener(this);
-
         addUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +60,9 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
     @Override
     public void onItemClick(View v, int position) {
         Intent intent = new Intent(ManagerActivity.this, DeleteAndUpdateActivity.class);
-        intent.putExtra("position", position + "");
+        intent.putExtra("username", allUser.get(position).getUsername());
+//        intent.putExtra("position", position + "");
         startActivity(intent);
     }
+
 }

@@ -42,11 +42,11 @@ public class User {
     }
 
     public String getSex() {
-        if ("1".equals(sex)) {
-            return "男";
-        } else if ("0".equals(sex)) {
-            return "女";
-        }
+//        if ("1".equals(sex)) {
+//            return "男";
+//        } else if ("0".equals(sex)) {
+//            return "女";
+//        }
         return sex;
     }
 

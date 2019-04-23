@@ -19,6 +19,11 @@ android {
         }
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     signingConfigs {
         release {
             storeFile file { "../baidu_lbs.jks" }
@@ -36,6 +41,15 @@ android {
             keyAlias "baidu"
             //别名密码
             keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
         }
     }
 

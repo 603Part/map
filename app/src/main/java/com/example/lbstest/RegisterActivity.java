@@ -35,14 +35,12 @@ public class RegisterActivity extends AppCompatActivity {
                 User user = new User();
                 user.setUsername(account.getText().toString());
                 user.setPassword(pass.getText().toString());
-                DBManager.insertNewUser(user); // 0 success 1 not empty 2 error
+//                DBManager.insertNewUser(user); // 0 success 1 not empty 2 error
 
-                if (DBManager.insertNewUser(user) ==2) {
+                if (DBManager.insertNewUser(user) !=0) {
                     Toast.makeText(RegisterActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(RegisterActivity.this, "注册成功,正在登录", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }

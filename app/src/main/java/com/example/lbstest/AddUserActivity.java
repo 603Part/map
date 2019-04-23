@@ -35,14 +35,12 @@ public class AddUserActivity extends AppCompatActivity {
                 User user = new User();
                 user.setUsername(account.getText().toString());
                 user.setPassword(pass.getText().toString());
-                DBManager.insertNewUser(user); // 0 success 1 not empty 2 error
-
-                if (DBManager.insertNewUser(user) ==2) {
+                if (DBManager.insertNewUser(user) !=0) {
                     Toast.makeText(AddUserActivity.this, "添加失败", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(AddUserActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AddUserActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(AddUserActivity.this, MainActivity.class);
+//                    startActivity(intent);
                     finish();
                 }
             }

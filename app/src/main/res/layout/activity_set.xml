@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white">
 
     <TextView
@@ -20,128 +21,149 @@
         android:layout_alignEnd="@+id/title"
         android:layout_alignRight="@+id/title"
         android:background="@color/gray" />
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用户名"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="13.5sp"
+        android:layout_marginTop="30dp"
+        />
     <EditText
         android:id="@+id/ed_update_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginRight="40dp"
-        android:background="@null"
-        android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
-        android:drawablePadding="13dp"
-        android:hint="修改账号"
         android:inputType="number"
         android:maxLength="11"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:textColor="@color/textColor"
         android:textColorHint="@color/tv_second_light_gray"
         android:textCursorDrawable="@drawable/shp_cursor"
-        android:textSize="13.5sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_below="@+id/ed_update_account"
-        android:layout_alignStart="@+id/ed_update_account"
-        android:layout_alignLeft="@+id/ed_update_account"
-        android:layout_alignEnd="@+id/ed_update_account"
-        android:layout_alignRight="@+id/ed_update_account"
-        android:layout_marginTop="8dp"
-        android:background="@color/gray" />
-
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/ed_pass"
+        android:hint="用户名"
+        android:textSize="13.5sp"
+        />
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ed_update_account"
+        android:text="昵称："
         android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="13.5sp"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="40dp"
-        android:background="@null"
-        android:drawablePadding="13dp"
-        android:hint="修改密码"
-        android:inputType="textPassword"
-        android:textColor="@color/textColor"
-        android:textColorHint="@color/tv_second_light_gray"
-        android:textCursorDrawable="@drawable/shp_cursor"
-        android:textSize="13.5sp" />
-
-    <View
-        android:id="@+id/login_line"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_below="@+id/ed_pass"
-        android:layout_alignStart="@+id/ed_pass"
-        android:layout_alignLeft="@+id/ed_pass"
-        android:layout_alignEnd="@+id/ed_pass"
-        android:layout_alignRight="@+id/ed_pass"
-        android:layout_marginTop="8dp"
-        android:background="@color/gray" />
-
-    <Button
-        android:id="@+id/btn_update"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_below="@+id/login_line"
-        android:layout_alignStart="@+id/login_line"
-        android:layout_alignLeft="@+id/login_line"
-        android:layout_alignEnd="@+id/login_line"
-        android:layout_alignRight="@+id/login_line"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/shp_login"
-        android:gravity="center"
-        android:text="修改"
-        android:textColor="@color/white"
-        android:textSize="13sp" />
-
+        />
     <EditText
-        android:id="@+id/ed_delete_account"
+        android:id="@+id/nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_update"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="40dp"
-        android:background="@null"
-        android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
-        android:drawablePadding="13dp"
-        android:hint="要删除的账号"
         android:inputType="number"
         android:maxLength="11"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:textColor="@color/textColor"
         android:textColorHint="@color/tv_second_light_gray"
         android:textCursorDrawable="@drawable/shp_cursor"
-        android:textSize="13.5sp" />
-
-    <View
-        android:id="@+id/login_line2"
+        android:hint="昵称"
+        android:textSize="13.5sp"
+        />
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_below="@+id/ed_delete_account"
-        android:layout_alignStart="@+id/ed_delete_account"
-        android:layout_alignLeft="@+id/ed_delete_account"
-        android:layout_alignEnd="@+id/ed_delete_account"
-        android:layout_alignRight="@+id/ed_delete_account"
-        android:layout_marginTop="8dp"
-        android:background="@color/gray" />
+        android:layout_height="wrap_content"
+        android:text="电话："
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="13.5sp"
+        android:layout_marginTop="30dp"
+        />
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="11"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/tv_second_light_gray"
+        android:textCursorDrawable="@drawable/shp_cursor"
+        android:hint="电话"
+        android:textSize="13.5sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="性别："
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="13.5sp"
+        android:layout_marginTop="30dp"
+        />
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        >
+        <RadioButton
+            android:id="@+id/man"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="男"
+            />
+        <RadioButton
+            android:id="@+id/woman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            />
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="是否允许登录："
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="13.5sp"
+        android:layout_marginTop="30dp"
+        />
+    <RadioGroup
+        android:id="@+id/isLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        >
+        <RadioButton
+            android:id="@+id/allow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="允许登录"
+            />
+        <RadioButton
+            android:id="@+id/disAllow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="不允许登录"
+            />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/btn_delete"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:layout_below="@+id/login_line2"
-        android:layout_alignStart="@+id/login_line2"
-        android:layout_alignLeft="@+id/login_line2"
-        android:layout_alignEnd="@+id/login_line2"
-        android:layout_alignRight="@+id/login_line2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
         android:background="@drawable/shp_login"
+        android:layout_margin="10dp"
         android:gravity="center"
-        android:text="删除"
+        android:onClick="save"
+        android:text="保存更改"
         android:textColor="@color/white"
         android:textSize="13sp" />
-
-</RelativeLayout>
+</LinearLayout>

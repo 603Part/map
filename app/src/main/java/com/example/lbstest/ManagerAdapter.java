@@ -29,7 +29,7 @@ public class ManagerAdapter extends RecyclerView.Adapter<ManagerAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.textView.setText("用户名: " + data.get(position).getNickname() + "，电话：" + data.get(position).getPhone());
+        holder.textView.setText("用户名: " + data.get(position).getUsername() + "，电话：" + data.get(position).getPhone());
         holder.textView2.setText(data.get(position).getRole());
         if (onItemClickListener != null) {
             holder.textView.setOnClickListener(new View.OnClickListener() {

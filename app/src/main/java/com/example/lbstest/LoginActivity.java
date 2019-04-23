@@ -40,16 +40,24 @@ public class LoginActivity extends AppCompatActivity {
                 User user = DBManager.login(account.getText().toString(), pass.getText().toString());// 0 success 1 not empty 2 error
                 if (user != null){
                     Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
-                    if(user.getStatus().equals("管理员")){
+                    if(user.getRole().equals("管理员")){
                         Intent intent = new Intent(LoginActivity.this, ManagerActivity.class);
                         startActivity(intent);
+                        finish();
                     }else{
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        if (user.getStatus().equals("0")) {
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("username", user.getUsername());
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "不允许登录，请联系管理员", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
-                    finish();
+
                 }else{
-                    Toast.makeText(LoginActivity.this,"获取用户信息失败",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"用户名或密码错",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -59,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -98,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
             case 1:
                 DBManager.copyDb(this, "");
                 DBManager.dbManager(this);
-                User login = DBManager.login("admin", "admin");
+//                User login = DBManager.login("admin", "admin");
                 break;
         }
     }
