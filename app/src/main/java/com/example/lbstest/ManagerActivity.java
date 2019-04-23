@@ -3,9 +3,12 @@ package com.example.lbstest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lbstest.db.DBManager;
@@ -18,7 +21,8 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
 
     private RecyclerView mRecyclerView;
     ManagerAdapter mAdapter;
-
+    private ImageView search;
+    private EditText searchEd;
     private TextView addUser;
 
     private List<User> list = new ArrayList<>();
@@ -30,11 +34,16 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
         setContentView(R.layout.activity_manager);
 
         addUser = (TextView) findViewById(R.id.add_user);
-
-
-
-
-
+        search = (ImageView)findViewById(R.id.search);
+        searchEd = (EditText) findViewById(R.id.search_username);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ManagerActivity.this, SearchActivity.class);
+                intent.putExtra("username", searchEd.getText().toString());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -46,7 +55,7 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
         mAdapter.setOnItemClickListener(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.addItemDecoration(new SpacesItemDecoration(10));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
         mRecyclerView.setAdapter(mAdapter);
         addUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,5 +73,6 @@ public class ManagerActivity extends AppCompatActivity implements ManagerAdapter
 //        intent.putExtra("position", position + "");
         startActivity(intent);
     }
+
 
 }

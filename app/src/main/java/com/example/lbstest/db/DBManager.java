@@ -103,7 +103,7 @@ public class DBManager {
             return 1; //用户存在
         }
         try {
-            manager.execSQL("INSERT INTO user values(NULL,'" + user.getUsername() + "','" + user.getPassword() + "','1','','用户','','','0')");
+            manager.execSQL("INSERT INTO user values(NULL,'" + user.getUsername() + "','" + user.getPassword() + "','"+user.getSex()+"','"+user.getPhone()+"','用户','','"+user.getNickname()+"','0')");
         } catch (Exception e) {
             e.printStackTrace();
             return 2; // 用户不存在但是插入失败

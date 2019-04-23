@@ -16,7 +16,7 @@ import com.example.lbstest.model.User;
 
 public class UpdateActivity extends AppCompatActivity {
 
-    EditText account,nickname,phone;
+    EditText account,nickname,phone,pwd;
     private RadioGroup gender,isLogin;
     private RadioButton man,woman,allowLogin,disAllowLogin;
     private User userByUserName;
@@ -32,6 +32,7 @@ public class UpdateActivity extends AppCompatActivity {
         String username = getIntent().getStringExtra("username");
         user = DBManager.findUserByUserName(username);
         account = (EditText) findViewById(R.id.ed_update_account);
+        pwd = (EditText)findViewById(R.id.pwd);
         nickname = (EditText) findViewById(R.id.nickname);
         phone = (EditText) findViewById(R.id.phone);
 
@@ -50,7 +51,7 @@ public class UpdateActivity extends AppCompatActivity {
         account.setText(userByUserName.getUsername());
         nickname.setText(userByUserName.getNickname());
         phone.setText(userByUserName.getPhone());
-
+        pwd.setText(userByUserName.getPassword());
         sex = userByUserName.getSex();
         status = userByUserName.getStatus();
         if ("1".equals(sex)) {
@@ -105,6 +106,7 @@ public class UpdateActivity extends AppCompatActivity {
     public void save(View view) {
         user.setUsername(account.getText().toString());
         user.setNickname(nickname.getText().toString());
+        user.setPassword(pwd.getText().toString());
         user.setSex(sex);
         user.setPhone(phone.getText().toString());
         user.setStatus(status);

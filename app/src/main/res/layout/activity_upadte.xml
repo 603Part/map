@@ -44,6 +44,31 @@
         android:hint="用户名"
         android:textSize="13.5sp"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="密码"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="13.5sp"
+        android:layout_marginTop="30dp"
+        />
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="11"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/tv_second_light_gray"
+        android:textCursorDrawable="@drawable/shp_cursor"
+        android:hint="密码"
+        android:textSize="13.5sp"
+        />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

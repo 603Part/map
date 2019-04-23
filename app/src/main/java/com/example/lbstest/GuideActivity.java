@@ -74,10 +74,10 @@ public class GuideActivity extends AppCompatActivity {
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
             params.addRule(RelativeLayout.CENTER_VERTICAL);
 
-            textView.setLayoutParams(params);
-            textView.setText("here!!!!!!!!!!!!!!!!1!!!"+location.getLatitude()+"\\"+location.getTime());
-            //textView.setId(latlag);
-            relativeLayout.addView(textView);
+            username.setLayoutParams(params);
+            username.setText("here!!!!!!!!!!!!!!!!1!!!"+location.getLatitude()+"\\"+location.getTime());
+            //username.setId(latlag);
+            relativeLayout.addView(username);
             setContentView(relativeLayout);*/
             setContentView(view);
         }

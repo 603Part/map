@@ -29,10 +29,14 @@ public class ManagerAdapter extends RecyclerView.Adapter<ManagerAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.textView.setText("用户名: " + data.get(position).getUsername() + "，电话：" + data.get(position).getPhone());
-        holder.textView2.setText(data.get(position).getRole());
+        holder.username.setText(String.format(context.getResources().getString(R.string.username),data.get(position).getUsername()));
+        holder.nickname.setText(String.format(context.getResources().getString(R.string.nickname),data.get(position).getNickname()));
+        holder.sex.setText(String.format(context.getResources().getString(R.string.gender),data.get(position).getSex().equals("1") ? "男" : "女"));
+        holder.phone.setText(String.format(context.getResources().getString(R.string.phone),data.get(position).getPhone()));
+        holder.status.setText(String.format(context.getResources().getString(R.string.islogin),data.get(position).getStatus().equals("1") ? "不可登录" : "可登录"));
+        holder.role.setText(String.format(context.getResources().getString(R.string.role),data.get(position).getRole()));
         if (onItemClickListener != null) {
-            holder.textView.setOnClickListener(new View.OnClickListener() {
+            holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     onItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
@@ -47,15 +51,23 @@ public class ManagerAdapter extends RecyclerView.Adapter<ManagerAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
-        TextView textView2;
+        TextView username;
+        TextView nickname;
         View     view;
+        TextView sex;
+        TextView phone;
+        TextView status;
+        TextView role;
 
         public ViewHolder(View itemView) {
             super(itemView);
             view = itemView;
-            textView = (TextView) itemView.findViewById(R.id.tv_name);
-            textView2 = (TextView) itemView.findViewById(R.id.tv_state);
+            username = (TextView) itemView.findViewById(R.id.tv_name);
+            nickname = (TextView) itemView.findViewById(R.id.nickname);
+            sex = (TextView) itemView.findViewById(R.id.sex);
+            phone = (TextView)itemView.findViewById(R.id.tv_phone);
+            status = (TextView)itemView.findViewById(R.id.tv_state);
+            role = (TextView)itemView.findViewById(R.id.tv_role);
         }
     }
 

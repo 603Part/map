@@ -58,6 +58,7 @@
         <activity android:name=".AddUserActivity"></activity>
         <activity android:name=".UpdateActivity"></activity>
         <activity android:name=".AboutMyActivity"></activity>
+        <activity android:name=".SearchActivity" />
     </application>
 
 </manifest>

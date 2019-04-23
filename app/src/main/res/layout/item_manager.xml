@@ -2,26 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
+    android:padding="10dp"
+    android:orientation="vertical">
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:paddingLeft="20dp"
-        android:text="dsfadf"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:textColor="#777"
-        android:layout_weight="1"
-        android:gravity="center|left"
-        android:textSize="12sp" />
+        android:text="@string/username"
+        />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#777"
+        android:text="@string/nickname"
+        />
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#777"
+        android:text="@string/gender"
+        />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:textColor="#777"
+        android:layout_marginTop="5dp"
+        />
 
     <TextView
         android:id="@+id/tv_state"
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:paddingLeft="20dp"
+        android:layout_height="wrap_content"
+        android:text="@string/islogin"
         android:textColor="#777"
-        android:gravity="center|right"
-        android:text="dsfadf"
-        android:textSize="12sp" />
+        android:layout_marginTop="5dp"
+         />
+
+    <TextView
+        android:id="@+id/tv_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/role"
+        android:textColor="#777"
+        android:layout_marginTop="5dp" />
 </LinearLayout>
